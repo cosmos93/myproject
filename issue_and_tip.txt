@@ -1,0 +1,258 @@
+★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★  ISSUE & TIP 공유 ★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★
+
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆ 
+◆◆◆◆  ISSUE & ERROR ◆◆◆◆◆  
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆ 
+
+[ Material TABLE 문제 ]  
+1. 페이징 처리?
+2. 컬럼수가 많아질 경우 횡 스크롤이 발생되지 않고 계속 각 컬럼 너비만 줄어들음....억지로 컬럼 사이즈 주면 화면 밖으로 탈출함
+3. 컬럼수가 많을 때 횡스크롤 강제 발생시, 로딩 시 가려져있는 컬럼들에 css 미적용 버그. 강제로 div 주고 css를 녹여서 해결할 수는 있음(iils 참조)
+=> https://github.com/angular/material2/issues/7404
+
+[ Console Warning Message ] 
+It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true
+      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for you. We recommend using this approach to avoid 'changed after checked' errors.
+
+      Example: 
+      form = new FormGroup({
+        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
+        last: new FormControl('Drew', Validators.required)
+      });
+  
+  => 정확한 원인은 모르겠는데, 폼 컨트롤러에서 [disabled]과 [formControl]을 동시에 줄 때 뭔가 충돌이 나는 것 같습니다.
+
+
+[ ERROR Error: mat-form-field must contain a MatFormFieldControl.]
+- Did you forget to add matInput to the native input or textarea element?
+=> <mat-form-field> 태그 내에서 *ngIF 등의 분기로 폼 컨트롤을 했을 때, 모든 조건이 false가 나서 내부 컴포넌트가 아무것도 없을 때 에러 납니다.
+   조건을 변경하거나, 태그 외부로 나타내주세요.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
+◆◆◆◆◆◆◆  TIP ◆◆◆◆◆◆◆
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
+
+[ 키 이벤트 한글 인식할 때 ]
++ keypress로는 한글을 캐치업 하지 못합니다. keyup을 사용하시면 될 것 같습니다. 테스트 필수.
+
+[ FormControl Validation 사용하기 ] 
+1. 컴포넌트 ts에서 폼컨트롤 정의하기(예시는 필수값 + 패턴(영대문자3 + 숫자2) )
+- idFormControl = new FormControl('', [Validators.required, Validators.pattern(/[A-Z]{3}[0-9]{2}/)]);
+- 정규식 표현 : http://www.nextree.co.kr/p4327/ 
+- 정규식 테스트 : https://regexr.com/ 
+
+2. HTML에서 폼에 폼컨트롤 링크
+- <input matInput placeholder="코드ID" [(ngModel)]="data.codeId" required [formControl]="idFormControl">
+
+3. 이벤트 지정
+- if(this.idFormControl.hasError('required') || this.idFormControl.hasError('pattern')){
+    alert('코드 ID 항목을 확인해주세요.');
+    return false;
+  }
+
+[ 스크롤 최상단으로 이동 ]
+ document.getElementsByClassName('body-contents')[0].scrollTo(0,0);
+ 
+[ Window Object 접근하고 싶을 때 ]
+ Window Inject해서 접근. 아래 사이트 참조해서 서비스 구현할 경우, 우리 프로젝트는 app자체에 스크롤 막아놨으므로 내부 항목 참조할 것.
+ -> Window.Service.ts 서비스 임포트할것. 테스트 필요. 
+ * 사이트 참조 : https://juristr.com/blog/2016/09/ng2-get-window-ref/
+ 
+[ Dialog 상 데이터 받아오고 싶을 때 ]
+  * 부모
+ let dialogRef = this.dialog.open(UserDialog, { data : { result : false } } );
+	 dialogRef.afterClosed().subscribe(result => {
+	    console.log(dialogRef.componentInstance.data); <- 팝업 종료 시 콘솔에 true 로 보여짐
+	});  
+
+ * 팝업
+ constructor(public dialogRef: MatDialogRef<UserDialog>, @Inject(MAT_DIALOG_DATA) public data: any){
+    this.data.result = true;
+ }
+ 
+ [ ag-grid-angular 적용 및 사용방법 ]
+1. xx.module.ts 파일 수정
+	- ag-grid 사용을 위한 import 선언
+	// ag-grid
+	import {AgGridModule} from "ag-grid-angular/main";
+	
+	- @NgModule 에 아래 내용 추가 
+	AgGridModule.withComponents([])
+	
+2. xx.component.html 파일에 그리드 추가 
+	- 아래 태그 추가 
+	<div class="grid-panel mat-elevation-z8">	
+	// 이 부분은 커스텀 페이징 부분인데 화면에 매우 어색하게 나오고 있어서 수정이 필요함 
+	// 페이징 자동 처리를 적용하려면 삭제
+	<div class="ag-page-select">
+	  		Page Size:
+	    <select (change)="onPageSizeChanged()" id="page-size" class="left">
+	        <option value="10" selected="">10</option>
+	        <option value="20">20</option>
+	        <option value="50">50</option>
+	        <option value="100">100</option>
+	</select>
+	// 여기까지 커스텀 페이징
+	</div>		
+		<ag-grid-angular #agGrid id="sysCdGrid" class="ag-theme-material ag-grid-angular"
+			[gridOptions]="gridOptions"
+		>
+		</ag-grid-angular>
+	</div>
+
+3. xx.component.ts 파일 수정 
+	- ag-grid 및 sorting을 위한 공통 모듈 import 
+	import {GridOptions} from "ag-grid/main";
+	import {CommonUtil} from "../util/CommonUtil";
+	
+	- 변수 선언 
+	* params = {}; 를 searchParams = {}; 로 수정
+	* constructor 에 아래내용 추가
+	    // we pass an empty gridOptions in, so we can grab the api out
+        this.gridOptions = <GridOptions>{
+            enableColResize: true
+            ,enableSorting: true
+            ,rowSelection: "single"
+            
+            // 페이징 관련 옵션
+            // tell grid we want virtual row model type
+            ,rowModelType: "infinite"
+            // how big each page in our page cache will be, default is 100
+            ,paginationPageSize: 10
+            // how many extra blank rows to display to the user at the end of the dataset,
+            // which sets the vertical scroll and then allows the grid to request viewing more rows of data.
+            // default is 1, ie show 1 row.
+            ,cacheOverflowSize: 1
+            // how many server side requests to send at a time. if user is scrolling lots, then the requests
+            // are throttled down
+            ,maxConcurrentDatasourceRequests: 2
+            // how many rows to initially show in the grid. having 1 shows a blank row, so it looks like
+            // the grid is loading from the users perspective (as we have a spinner in the first col)
+            ,infiniteInitialRowCount: 1
+            // how many pages to store in cache. default is undefined, which allows an infinite sized cache,
+            // pages are never purged. this should be set for large data to stop your browser from getting
+            // full of data
+            ,maxBlocksInCache: 2
+            ,enableServerSideSorting: true
+            ,pagination: true
+            ,paginationAutoPageSize: false  // 자동세팅의 경우 true 로 설정
+            
+        };
+
+        this.gridOptions.columnDefs = this.createColumnDefs();
+        this.gridOptions.onGridReady = (params) => {
+            this.gridApi = params.api;
+            this.gridColumnApi = params.columnApi;
+            this.gridParams = params;
+
+            // 그리드 컬럼 사이즈 자동 맞춤
+            params.api.sizeColumnsToFit();
+            this.loadData(this.gridParams);
+        }
+        //row 더블클릭 이벤트 처리 
+        this.gridOptions.onRowDoubleClicked = (params) :void => {
+            this.onRowDblClick(params);    
+        }
+	
+	* column definition 추가 - 컬럼명 및 field는 조건에 맞게 변경
+	    private createColumnDefs() : any[] {
+			return [
+				{
+					headerName: "시스템코드",
+					field: "SYS_CD",
+					cellRenderer: function(params) {
+						if (params.value !== undefined) {
+							return params.value;
+						} else {
+							return '<img src="../../image/loading.gif">';
+						}
+					},
+					supressMenu: true,
+					supressFilter: true
+		
+				},
+				{
+					headerName: "시스템명",
+					field: "SYS_NM",
+					supressMenu: true,
+					supressFilter: true
+				},
+				{
+					headerName: "대/내외",
+					field: "INE_DV_CD",
+					supressMenu: true,
+					supressFilter: true
+		
+				},
+				{
+					headerName: "사용여부",
+					field: "USE_F",
+					supressSorting: true,
+					supressMenu: true,
+					supressFilter: true
+				}
+			];
+		   
+			this.defaultColDef = {
+				editable: false
+			};
+		}
+	* ngOnInit() 안에 있는 loadData(); 삭제 
+	* loadData() 변경 
+		// 변경부분 
+		// 1. 함수명에 파라미터 추가 - params
+		// 2. 기존 검색조건인 this.params 를 this.searchParams 로 변경 
+		// 3. 데이터 조회 부분 subscribe 이하 변경 
+		loadData(params) {
+			this.urlService.getData(this.GET_SYSCD_LIST_URL, this.searchParams)
+				.subscribe(data => {
+					var dataSource = {
+						rowCount: null,
+						getRows: function(params) {
+							setTimeout(function() {
+								var dataAfterSorting = CommonUtil.sortData(params.sortModel, data.sysCdList);
+								var rowsThisPage = dataAfterSorting.slice(params.startRow, params.endRow);
+								var lastRow = -1;
+								if (dataAfterSorting.length <= params.endRow) {
+									lastRow = dataAfterSorting.length;
+								}
+								params.successCallback(rowsThisPage, lastRow);
+							}, 100);
+						}
+					};
+					params.api.setDatasource(dataSource);
+
+				})
+		}
+	* row 더블클릭을 위한 함수 추가
+	
+	    // row 더블클릭시 실행되는 함수 
+		onRowDblClick(params) : void{
+			const selectedRows = params.api.getSelectedRows();
+		
+			const sRow;
+			selectedRows.forEach( function(selectedRow, index) {
+				sRow = selectedRow;    
+			});
+			this.handleRowDblClick(sRow);
+		}
+	
+	* 커스텀 페이징을 위한 함수 선언 (선택적)
+	    // Page Size 변경 시 
+		onPageSizeChanged(newPageSize) {
+			var value = document.getElementById("page-size").value;
+			this.gridApi.paginationSetPageSize(Number(value));
+		}
+
+[ag-grid 적용부분 끝]
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<project name="IIMS_WAR"  default="default">
+    <property file="build.properties"/>
+    <property environment="env"/>
+ 
+<!-- ============================================== -->
+<!--                                                -->
+<!-- init                                           -->
+<!--                                                -->
+<!-- ============================================== -->  
+    <target name="init">  
+        <!-- Directories -->
+       	<mkdir dir="${td}/dist" />
+       	<mkdir dir="${td}/dist/WEB-INF" />       	
+    	<mkdir dir="${td}/dist/WEB-INF/classes" />
+    	<mkdir dir="${td}/dist/common" />
+    	<mkdir dir="${td}/dist/css" />
+    	<mkdir dir="${td}/dist/images" />
+    	<mkdir dir="${td}/dist/META-INF" />
+    	<mkdir dir="${td}/dist/script" />
+    </target>     
+	   
+<!-- ============================================== -->
+<!--                                                -->
+<!-- Clean				                            -->
+<!--                                                -->
+<!-- ============================================== -->
+    <target name="clean">      
+        <delete dir="${td}" />
+    </target>   
+	 
+   
+<!-- ============================================== -->
+<!--                                                -->
+<!-- Resources, Jar, JSP COPY                       -->
+<!--                                                -->
+<!-- ============================================== -->
+    <target name="copy"  >
+    	<copy todir="${td}/dist/">
+		    <fileset dir="${sd}/src/main/webapp">		    	
+		    	<include name="**/**"/>
+		    	<exclude name="**/.svn/*"/>
+		    </fileset>       
+		</copy>		   
+    	 
+    </target> 
+	
+<!-- ============================================== -->
+<!-- Env Copy DEV                                   -->
+<!-- ============================================== -->
+    <target name="copyResource"  >
+    	<mkdir dir="${td}/dist/WEB-INF/classes" />
+    	<copy todir="${td}/dist/WEB-INF/classes/">
+    		<fileset dir="${sd}/target/classes">	    	
+		    	<include name="**/**"/>
+		    	<exclude name="**/.svn/*"/>
+		    	<exclude name=".project"/>
+		    </fileset>       
+		</copy>	
+    </target> 
+
+<!-- ============================================== -->
+<!--                                                -->
+<!-- WAR				                            -->
+<!--                                                -->
+<!-- ============================================== -->
+    <target name="iimswar" depends="init">
+		<war destFile="${warTd}/iims.war" webxml="${td}/dist/WEB-INF/web.xml">
+    		<fileset dir="${td}/dist" includes="**/*" />
+		</war>				
+    </target>
+	     
+	
+	   
+ <!-- ============================================== -->
+ <!--                                                -->
+ <!-- All   	     	                                -->
+ <!--                                                -->
+ <!-- ============================================== -->	
+    <target name="default">  
+    	<antcall target="copy" />    	
+		<antcall target="init" />	
+    	<antcall target="iimswar" />    	
+    </target>
+	
+	
+	
+</project>

@@ -1,0 +1,332 @@
+{
+	"DIMMS": {
+		"provider": {
+			"sysInfo": {
+				"itMmngrId": "kimi",
+				"sysCd": "ACO",
+				"itMmngrNm": "관리자",
+				"mngrNm": "",
+				"filePath": "",
+				"mngrId": "",
+				"serviceId": "scv4r433"
+			},
+			"serviceIos": {
+				"serviceIo": [
+					{
+						"ios": {
+							"io": [
+								{
+									"msgType": "",
+									"serNo": 1,
+									"defaultValue": 0,
+									"ioLvl": 0,
+									"parSerNo": 0,
+									"ioKorNm": "10월지수",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "",
+									"encYn": "N",
+									"ioEngNm": "OCT_INDX",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 4,
+									"ioAppNm": "octIndx",
+									"dataTypDvCd": "N",
+									"pointYn": "Y",
+									"dataTypArrDvCd": "",
+									"dataLn": 8,
+									"ioExpl": "",
+									"paddingStr": ""
+								}
+							]
+						},
+						"ioInfo": {
+							"ioDvCd": "OI",
+							"ioId": "TI_scv4r433_02",
+							"ioVer": 0
+						}
+					},
+					{
+						"ios": {
+							"io": [
+								{
+									"msgType": "",
+									"serNo": 1,
+									"defaultValue": "",
+									"ioLvl": 0,
+									"parSerNo": 0,
+									"ioKorNm": "테스트",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "test_group",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "testGroup",
+									"dataTypDvCd": "O",
+									"pointYn": "N",
+									"dataTypArrDvCd": "",
+									"dataLn": -1,
+									"ioExpl": "",
+									"paddingStr": ""
+								},
+								{
+									"msgType": "",
+									"serNo": 2,
+									"defaultValue": 0,
+									"ioLvl": 1,
+									"parSerNo": 1,
+									"ioKorNm": "12월기말책임준비금",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "DEC_EDTM_PLRV",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "decEdtmPlrv",
+									"dataTypDvCd": "N",
+									"pointYn": "N",
+									"dataTypArrDvCd": "",
+									"dataLn": 12,
+									"ioExpl": "",
+									"paddingStr": ""
+								},
+								{
+									"msgType": "",
+									"serNo": 3,
+									"defaultValue": 0,
+									"ioLvl": 1,
+									"parSerNo": 1,
+									"ioKorNm": "13차월이상관리FP수",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "MT13_ABOV_MGMT_FP_CNT",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "mt13AbovMgmtFpCnt",
+									"dataTypDvCd": "N",
+									"pointYn": "N",
+									"dataTypArrDvCd": "",
+									"dataLn": 15,
+									"ioExpl": "",
+									"paddingStr": ""
+								}
+							]
+						},
+						"ioInfo": {
+							"ioDvCd": "OO",
+							"ioId": "TO_scv4r433_03",
+							"ioVer": 0
+						}
+					}
+				]
+			}
+		},
+		"itfInfo": {
+			"trProcMthdDvCd": 1,
+			"extlTrCd": "",
+			"itfNm": "test",
+			"itfPrsWayCd": "OO",
+			"itfTypDvCd": "R",
+			"mappingYn": "N",
+			"itfSysDvCd": "MCI",
+			"extlDimTypDvCd": "",
+			"reqresDvCd": "",
+			"extlSrDvCd": "I",
+			"extlInstCd": "",
+			"extlDimClsCd": "",
+			"tmout": 5000,
+			"wrkDt": "2019-11-21 09:32:16",
+			"personalInfoInclYn": "N",
+			"retryYn": "N",
+			"extlExtInstCd": "",
+			"itfId": "HLIWUI00029",
+			"providerServiceId": "scv4r433",
+			"ldimYn": "N",
+			"retryCnt": 0,
+			"itfExpl": "",
+			"consumerServiceId": "svc2222",
+			"itfVer": 19,
+			"trTypDvCd": "S",
+			"wrkerId": "kimi",
+			"consumerSysCd": "WUI",
+			"providerSysCd": "ACO",
+			"extlInstNm": "",
+			"itfStateDvCd": "D",
+			"deployExpl": "comment",
+			"itfDeployVer": 18
+		},
+		"consumer": {
+			"sysInfo": {
+				"itMmngrId": "kimi",
+				"sysCd": "WUI",
+				"itMmngrNm": "관리자",
+				"mngrNm": "",
+				"filePath": "",
+				"mngrId": "",
+				"serviceId": "svc2222"
+			},
+			"serviceIos": {
+				"serviceIo": [
+					{
+						"ios": {
+							"io": [
+								{
+									"msgType": "",
+									"serNo": 1,
+									"defaultValue": 0,
+									"ioLvl": 0,
+									"parSerNo": 0,
+									"ioKorNm": "10월지수",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "",
+									"encYn": "N",
+									"ioEngNm": "OCT_INDX",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 4,
+									"ioAppNm": "octIndx",
+									"dataTypDvCd": "N",
+									"pointYn": "Y",
+									"dataTypArrDvCd": "",
+									"dataLn": 8,
+									"ioExpl": "",
+									"paddingStr": ""
+								}
+							]
+						},
+						"ioInfo": {
+							"ioDvCd": "OI",
+							"ioId": "SI_WUI_scv4r433_01",
+							"ioVer": 0
+						}
+					},
+					{
+						"ios": {
+							"io": [
+								{
+									"msgType": "",
+									"serNo": 1,
+									"defaultValue": "",
+									"ioLvl": 0,
+									"parSerNo": 0,
+									"ioKorNm": "테스트",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "test_group",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "testGroup",
+									"dataTypDvCd": "O",
+									"pointYn": "N",
+									"dataTypArrDvCd": "",
+									"dataLn": -1,
+									"ioExpl": "",
+									"paddingStr": ""
+								},
+								{
+									"msgType": "",
+									"serNo": 2,
+									"defaultValue": 0,
+									"ioLvl": 1,
+									"parSerNo": 1,
+									"ioKorNm": "12월기말책임준비금",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "DEC_EDTM_PLRV",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "decEdtmPlrv",
+									"dataTypDvCd": "N",
+									"pointYn": "Y",
+									"dataTypArrDvCd": "",
+									"dataLn": 12,
+									"ioExpl": "",
+									"paddingStr": ""
+								},
+								{
+									"msgType": "",
+									"serNo": 3,
+									"defaultValue": 0,
+									"ioLvl": 1,
+									"parSerNo": 1,
+									"ioKorNm": "13차월이상관리FP수",
+									"maskYn": "N",
+									"align": "",
+									"dataTypArrGroupNm": "테스트",
+									"encYn": "N",
+									"ioEngNm": "MT13_ABOV_MGMT_FP_CNT",
+									"dataTypArrDvType": "",
+									"maskTypCd": "",
+									"domainNm": "",
+									"trmTp": "",
+									"encTp": "",
+									"decimalPnt": 0,
+									"ioAppNm": "mt13AbovMgmtFpCnt",
+									"dataTypDvCd": "N",
+									"pointYn": "N",
+									"dataTypArrDvCd": "",
+									"dataLn": 15,
+									"ioExpl": "",
+									"paddingStr": ""
+								}
+							]
+						},
+						"ioInfo": {
+							"ioDvCd": "OO",
+							"ioId": "SO_WUI_scv4r433_04",
+							"ioVer": 0
+						}
+					}
+				]
+			}
+		},
+		"itfExtInfos": {
+			"itfExtInfo": [
+				{
+					"extFldVal": "",
+					"extFldNm": "cosmosKey1"
+				},
+				{
+					"extFldVal": "",
+					"extFldNm": "cosmosKey2"
+				}
+			]
+		}
+	}
+}

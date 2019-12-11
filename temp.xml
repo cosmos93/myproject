@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DIMMS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.tcovered.com"
+	xsi:schemaLocation="http://www.tcvoered.com InterfaceInfo.xsd">
+	<itfInfo xmlns="">
+		<itfId>HLIWUI00029</itfId>
+		<itfVer>14</itfVer>
+		<itfSysDvCd>MCI</itfSysDvCd>
+		<itfTypDvCd>R</itfTypDvCd>
+		<itfPrsWayCd>OO</itfPrsWayCd>
+		<trTypDvCd>S</trTypDvCd>
+		<extlSrDvCd>I</extlSrDvCd>
+		<reqresDvCd />
+		<providerSysCd>ACO</providerSysCd>
+		<consumerSysCd>WUI</consumerSysCd>
+		<itfDeployVer>13</itfDeployVer>
+		<itfStateDvCd>D</itfStateDvCd>
+		<itfNm>test</itfNm>
+		<itfExpl />
+		<trProcMthdDvCd>1</trProcMthdDvCd>
+		<extlInstCd />
+		<extlInstNm />
+		<extlExtInstCd />
+		<extlDimClsCd />
+		<extlTrCd />
+		<extlDimTypDvCd />
+		<providerServiceId>scv4r433</providerServiceId>
+		<consumerServiceId>svc2222</consumerServiceId>
+		<personalInfoInclYn>N</personalInfoInclYn>
+		<tmout>0</tmout>
+		<ldimYn>N</ldimYn>
+		<mappingYn>N</mappingYn>
+		<retryYn>N</retryYn>
+		<retryCnt>0</retryCnt>
+		<deployExpl>comment</deployExpl>
+		<wrkerId>kimi</wrkerId>
+		<wrkDt>2019-11-04 12:54:37</wrkDt>
+	</itfInfo>
+	<itfExtInfos xmlns="" />
+	<consumer xmlns="">
+		<sysInfo>
+			<sysCd>WUI</sysCd>
+			<serviceId>svc2222</serviceId>
+			<itMmngrId>kimi</itMmngrId>
+			<itMmngrNm>관리자</itMmngrNm>
+			<mngrId />
+			<mngrNm />
+			<filePath />
+		</sysInfo>
+		<serviceIos>
+			<serviceIo>
+				<ioInfo>
+					<ioDvCd>OI</ioDvCd>
+					<ioVer>0</ioVer>
+					<ioId>SI_WUI_scv4r433_01</ioId>
+				</ioInfo>
+				<ios>
+					<io>
+						<ioLvl>0</ioLvl>
+						<parSerNo>0</parSerNo>
+						<serNo>1</serNo>
+						<ioEngNm>OCT_INDX</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>10월지수</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm />
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>8</dataLn>
+						<decimalPnt>4</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+				</ios>
+			</serviceIo>
+			<serviceIo>
+				<ioInfo>
+					<ioDvCd>OO</ioDvCd>
+					<ioVer>0</ioVer>
+					<ioId>SO_WUI_scv4r433_04</ioId>
+				</ioInfo>
+				<ios>
+					<io>
+						<ioLvl>0</ioLvl>
+						<parSerNo>0</parSerNo>
+						<serNo>1</serNo>
+						<ioEngNm>test_group</ioEngNm>
+						<ioAppNm>testGroup</ioAppNm>
+						<ioKorNm>테스트</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>O</dataTypDvCd>
+						<dataLn>0</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue />
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>N</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+					<io>
+						<ioLvl>1</ioLvl>
+						<parSerNo>1</parSerNo>
+						<serNo>2</serNo>
+						<ioEngNm>DEC_EDTM_PLRV</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>12월기말책임준비금</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>12</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+					<io>
+						<ioLvl>1</ioLvl>
+						<parSerNo>1</parSerNo>
+						<serNo>3</serNo>
+						<ioEngNm>MT13_ABOV_MGMT_FP_CNT</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>13차월이상관리FP수</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>15</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+				</ios>
+			</serviceIo>
+		</serviceIos>
+	</consumer>
+	<provider xmlns="">
+		<sysInfo>
+			<sysCd>ACO</sysCd>
+			<serviceId>scv4r433</serviceId>
+			<itMmngrId>kimi</itMmngrId>
+			<itMmngrNm>관리자</itMmngrNm>
+			<mngrId />
+			<mngrNm />
+			<filePath />
+		</sysInfo>
+		<serviceIos>
+			<serviceIo>
+				<ioInfo>
+					<ioDvCd>OI</ioDvCd>
+					<ioVer>0</ioVer>
+					<ioId>TI_scv4r433_02</ioId>
+				</ioInfo>
+				<ios>
+					<io>
+						<ioLvl>0</ioLvl>
+						<parSerNo>0</parSerNo>
+						<serNo>1</serNo>
+						<ioEngNm>OCT_INDX</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>10월지수</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm />
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>8</dataLn>
+						<decimalPnt>4</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+				</ios>
+			</serviceIo>
+			<serviceIo>
+				<ioInfo>
+					<ioDvCd>OO</ioDvCd>
+					<ioVer>0</ioVer>
+					<ioId>TO_scv4r433_03</ioId>
+				</ioInfo>
+				<ios>
+					<io>
+						<ioLvl>0</ioLvl>
+						<parSerNo>0</parSerNo>
+						<serNo>1</serNo>
+						<ioEngNm>test_group</ioEngNm>
+						<ioAppNm>testGroup</ioAppNm>
+						<ioKorNm>테스트</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>O</dataTypDvCd>
+						<dataLn>0</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue />
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>N</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+					<io>
+						<ioLvl>1</ioLvl>
+						<parSerNo>1</parSerNo>
+						<serNo>2</serNo>
+						<ioEngNm>DEC_EDTM_PLRV</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>12월기말책임준비금</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>12</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+					<io>
+						<ioLvl>1</ioLvl>
+						<parSerNo>1</parSerNo>
+						<serNo>3</serNo>
+						<ioEngNm>MT13_ABOV_MGMT_FP_CNT</ioEngNm>
+						<ioAppNm />
+						<ioKorNm>13차월이상관리FP수</ioKorNm>
+						<dataTypArrDvCd />
+						<dataTypArrDvType />
+						<dataTypArrGroupNm>테스트</dataTypArrGroupNm>
+						<dataTypDvCd>N</dataTypDvCd>
+						<dataLn>15</dataLn>
+						<decimalPnt>0</decimalPnt>
+						<ioExpl />
+						<maskYn>N</maskYn>
+						<maskTypCd />
+						<encYn>N</encYn>
+						<defaultValue>0</defaultValue>
+						<trmTp />
+						<domainNm />
+						<encTp />
+						<align />
+						<pointYn>Y</pointYn>
+						<paddingStr />
+						<msgType />
+					</io>
+				</ios>
+			</serviceIo>
+		</serviceIos>
+	</provider>
+</DIMMS>
